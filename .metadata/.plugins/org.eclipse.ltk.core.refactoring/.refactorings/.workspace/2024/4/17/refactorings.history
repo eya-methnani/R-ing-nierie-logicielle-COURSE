@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;MvenOneToManyXML&apos;" deleteContents="true" description="Delete resource &apos;MvenOneToManyXML&apos;" element1="/MvenOneToManyXML" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1714122684690"/>&#x0A;<refactoring comment="Delete resource &apos;GestionDeStocks&apos;" deleteContents="false" description="Delete resource &apos;GestionDeStocks&apos;" element1="/GestionDeStocks" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1714138011040"/>
+</session>

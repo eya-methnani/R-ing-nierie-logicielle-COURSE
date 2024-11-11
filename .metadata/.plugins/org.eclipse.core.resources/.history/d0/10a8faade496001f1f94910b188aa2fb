@@ -1,0 +1,122 @@
+@startuml
+
+!define rect BusinessProcess
+
+package "Business Layer" {
+    rect "Management & Improvement" as Business_Management {
+        BusinessFunction "Performance Management"
+    }
+
+    rect "Quality Assurance & Accreditation" as Business_QA {
+        BusinessFunction "Quality Assurance"
+    }
+
+    rect "Administrative Support" as Business_Admin {
+        BusinessFunction "Student Administrative Support"
+    }
+
+    rect "Certification Training" as Business_CertTraining {
+        BusinessFunction "Certification Service"
+    }
+
+    rect "Cooperation" as Business_Cooperation {
+        BusinessFunction "Partnership Management"
+    }
+
+    rect "Degree Programs" as Business_Degree {
+        BusinessFunction "Degree Program Service"
+    }
+
+    rect "Research and Innovation" as Business_Research {
+        BusinessFunction "Research Output Service"
+    }
+
+    rect "Communication" as Business_Communication {
+        BusinessFunction "Public Relations"
+    }
+
+    rect "IT Resources" as Business_IT {
+        BusinessFunction "IT Infrastructure"
+    }
+
+    rect "Human Resources Management" as Business_HR {
+        BusinessFunction "Employee Management"
+    }
+
+    rect "Finance" as Business_Finance {
+        BusinessFunction "Financial Support"
+    }
+}
+
+package "Application Layer" {
+    rect "Student Information System (SIS)" as App_SIS {
+        ApplicationFunction "Student Enrollment Management"
+        ApplicationFunction "Academic Records Maintenance"
+        ApplicationFunction "Student Profile Management"
+        ApplicationFunction "Reporting & Analytics"
+        ApplicationFunction "Data Exchange API"
+    }
+
+    rect "Human Resource Management System (HRMS)" as App_HRMS {
+        ApplicationFunction "Employee Records Management"
+        ApplicationFunction "Leave & Attendance Management"
+        ApplicationFunction "Performance Management"
+        ApplicationFunction "Payroll Processing"
+        ApplicationFunction "Recruitment Management"
+    }
+
+    rect "Finance Management System (FMS)" as App_FMS {
+        ApplicationFunction "Budgeting & Forecasting"
+        ApplicationFunction "Expense Tracking"
+        ApplicationFunction "Procurement Management"
+        ApplicationFunction "Accounts Receivable & Payable"
+        ApplicationFunction "Financial Reporting"
+    }
+
+    rect "Learning Management System (LMS)" as App_LMS {
+        ApplicationFunction "Course Content Management"
+        ApplicationFunction "Assessment & Grading"
+        ApplicationFunction "Certification Issuance"
+        ApplicationFunction "Student Engagement Tracking"
+        ApplicationFunction "Integration with SIS"
+    }
+
+    rect "Quality Assurance System (QAS)" as App_QAS {
+        ApplicationFunction "Compliance Tracking"
+        ApplicationFunction "Audit Management"
+        ApplicationFunction "Evaluation & Feedback Collection"
+        ApplicationFunction "Accreditation Document Management"
+        ApplicationFunction "Performance Reporting"
+    }
+
+    rect "Research Database" as App_ResearchDB {
+        ApplicationFunction "Research Publication Management"
+        ApplicationFunction "Citation & Impact Tracking"
+        ApplicationFunction "Research Project Documentation"
+        ApplicationFunction "Public Access Control"
+        ApplicationFunction "Integration with External Platforms"
+    }
+
+    rect "Communication Platform" as App_CommunicationPlatform {
+        ApplicationFunction "Internal Messaging"
+        ApplicationFunction "Event Management"
+        ApplicationFunction "News & Updates Distribution"
+        ApplicationFunction "Social Media Integration"
+        ApplicationFunction "Feedback Collection"
+    }
+}
+
+' Define relationships
+Business_Management -down-> App_FMS : "Supports Financial Planning"
+Business_QA -down-> App_QAS : "Ensures Compliance"
+Business_Admin -down-> App_SIS : "Student Administration"
+Business_CertTraining -down-> App_LMS : "Course Delivery"
+Business_Cooperation -down-> App_CommunicationPlatform : "Manages Communication"
+Business_Degree -down-> App_LMS : "Degree Tracking"
+Business_Research -down-> App_ResearchDB : "Stores Research Outputs"
+Business_Communication -down-> App_CommunicationPlatform : "Executes Communications"
+Business_IT -down-> App_SIS : "Manages IT Infrastructure"
+Business_HR -down-> App_HRMS : "Manages HR Functions"
+Business_Finance -down-> App_FMS : "Handles Financial Operations"
+
+@enduml

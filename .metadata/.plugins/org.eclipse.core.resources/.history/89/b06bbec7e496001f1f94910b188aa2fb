@@ -1,0 +1,107 @@
+public class ArchiMateDiagram {
+
+    // Business Layer
+    static class BusinessProcess {
+        String name;
+        public BusinessProcess(String name) {
+            this.name = name;
+        }
+        public void performFunction() {
+            System.out.println("Performing business function for " + name);
+        }
+    }
+
+    // Application Layer
+    static class ApplicationComponent {
+        String name;
+        public ApplicationComponent(String name) {
+            this.name = name;
+        }
+        public void executeFunction() {
+            System.out.println("Executing application function for " + name);
+        }
+    }
+
+    // Specific Business Processes
+    static class ManagementImprovement extends BusinessProcess {
+        public ManagementImprovement() {
+            super("Management & Improvement");
+        }
+    }
+
+    static class QualityAssurance extends BusinessProcess {
+        public QualityAssurance() {
+            super("Quality Assurance & Accreditation");
+        }
+    }
+
+    static class AdministrativeSupport extends BusinessProcess {
+        public AdministrativeSupport() {
+            super("Administrative Support for Learning");
+        }
+    }
+
+    // ... (other business processes can be defined similarly)
+
+    // Specific Application Components
+    static class StudentInformationSystem extends ApplicationComponent {
+        public StudentInformationSystem() {
+            super("Student Information System (SIS)");
+        }
+    }
+
+    static class HumanResourceManagementSystem extends ApplicationComponent {
+        public HumanResourceManagementSystem() {
+            super("Human Resource Management System (HRMS)");
+        }
+    }
+
+    static class FinanceManagementSystem extends ApplicationComponent {
+        public FinanceManagementSystem() {
+            super("Finance Management System (FMS)");
+        }
+    }
+
+    // ... (other application components can be defined similarly)
+
+    // Relationships between Business Processes and Application Components
+    static class BusinessApplicationRelation {
+        BusinessProcess businessProcess;
+        ApplicationComponent applicationComponent;
+
+        public BusinessApplicationRelation(BusinessProcess businessProcess, ApplicationComponent applicationComponent) {
+            this.businessProcess = businessProcess;
+            this.applicationComponent = applicationComponent;
+        }
+
+        public void describeRelation() {
+            System.out.println(businessProcess.name + " is supported by " + applicationComponent.name);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create instances of business processes
+        BusinessProcess management = new ManagementImprovement();
+        BusinessProcess qualityAssurance = new QualityAssurance();
+        BusinessProcess adminSupport = new AdministrativeSupport();
+
+        // Create instances of application components
+        ApplicationComponent sis = new StudentInformationSystem();
+        ApplicationComponent hrms = new HumanResourceManagementSystem();
+        ApplicationComponent fms = new FinanceManagementSystem();
+
+        // Establish relationships
+        BusinessApplicationRelation relation1 = new BusinessApplicationRelation(management, fms);
+        BusinessApplicationRelation relation2 = new BusinessApplicationRelation(qualityAssurance, sis);
+        BusinessApplicationRelation relation3 = new BusinessApplicationRelation(adminSupport, hrms);
+
+        // Describe relations
+        relation1.describeRelation();
+        relation2.describeRelation();
+        relation3.describeRelation();
+
+        // Execute functions as a demonstration
+        management.performFunction();
+        fms.executeFunction();
+    }
+}
